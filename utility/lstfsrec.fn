@@ -1,0 +1,8 @@
+#!/bin/bash
+# list filenames inside ~/bin directory recursively and sort
+find /Users/andrew/bin -maxdepth 4 -type f -not -path '*/\.*' | sed 's/^\.\///g' | sort
+
+# remove -maxdepth 1 to search recursively
+# -type f: find files not directories (d)
+# -not -path '*/\.*' do not return .hidden_files
+# sed 's/^\.\///g': remove the prepended ./ from the result list

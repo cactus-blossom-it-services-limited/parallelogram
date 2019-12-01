@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo How old are you?
+
+read age
+
+if [ "$age" -gt 20 ]
+then
+  echo You can drink.
+else
+  echo You are too young to drink.
+fi
+
+# Bash operators
+# -eq ==. Equal
+# -ne !=  Not equal
+# -gt >  Greater than
+# -ge >= Greater than or equal to
+# -lt <  Less than
+# -le <= Less than or equal to
+# -z == null  Is null

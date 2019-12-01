@@ -1,0 +1,13 @@
+#!/bin/bash
+# list filenames inside ~/bin directory recursively showing the full path
+for f in $(find $(pwd) -maxdepth 4 -type f -not -path '*/\.*' | sort); 
+do 
+# copy the paths of each file to /tmp/alias.test
+bs="$(basename -- $f)"
+echo >> /tmp/alias.test "alias $bs=./$f"; 
+# remove duplicate lines from /tmp/alias.test
+sort -u -o /tmp/alias.test /tmp/alias.test; 
+done
+# remove -maxdepth 1 to search recursively
+# -type f: find files not directories (d)
+# -not -path '*/\.*' do not return .hidden_files

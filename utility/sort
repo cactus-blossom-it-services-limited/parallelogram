@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Pipe ls utility to sort. Then sort by the 8th column (filename)
+
+ls -l | sort -k 9

@@ -1,0 +1,3 @@
+#!/bin/bash
+# show the date and time
+date +"%A %B %d"
