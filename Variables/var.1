@@ -1,0 +1,35 @@
+#!/bin/bash
+# basic illustration of bash variables
+
+myName="Andrew"
+
+# declare a constant (a bit unusual)
+declare -r LUCKYNUM=5
+num2=4
+
+num3=$((LUCKYNUM+num2))
+num4=$((LUCKYNUM-num2))
+num5=$((LUCKYNUM*num2))
+num6=$((LUCKYNUM/num2))
+
+echo "5 + 4 = $num3"
+echo "5 - 4 = $num4"
+echo "5 * 4 = $num5"
+echo "5 / 4 = $num6"
+
+echo $((5**2))
+echo $(( 5%4 ))
+
+rand=5
+let rand+=4
+echo "$rand"
+
+echo "rand++ = $(( rand++ ))"
+echo "++rand = $(( ++rand ))"
+echo "rand-- = $(( rand-- ))"
+echo "--rand = $(( --rand ))"
+
+num7=1.2
+num8=3.4
+num9=$(python -c "print $num7+$num8")
+echo $num9

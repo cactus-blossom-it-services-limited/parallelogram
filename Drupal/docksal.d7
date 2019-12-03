@@ -1,0 +1,13 @@
+#!/bin/bash
+# Download Drupal 7 boilerplate from github and set up vanilla Drupal 7 site
+# https://github.com/docksal/boilerplate-drupal7
+# first argument is the name of the Drupal 7 docksal project
+
+# Download the Docksal repo into your projects folder
+git clone https://github.com/docksal/boilerplate-drupal7.git $1
+cd $1
+
+# Initialise local settings and install the site using drush
+# fin init runs the script in .docksal/commands/init. This is meant to be customised to 
+# initalise local settings for Drupal, Behat, Docker compose; enable/disable modules, run tests
+fin int
