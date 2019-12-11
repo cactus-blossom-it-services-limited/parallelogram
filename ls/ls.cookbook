@@ -1,0 +1,14 @@
+#!/bin/bash
+# Test out the ls command in full
+touch /tmp/sample_file
+
+# shows only file names
+ls /tmp/sample_file
+# shows more details on each file
+ls -l /tmp/sample_file
+# stat find and printf outputing like ls -l
+ls -l /tmp/sample_file
+stat -c'%A %h %U %G %s %y %n' /tmp/sample_file
+find /tmp/ -name sample_file -
+printf '%m %n %u %g %t %p'
+
