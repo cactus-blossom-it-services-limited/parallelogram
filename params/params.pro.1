@@ -1,0 +1,29 @@
+#!/bin/bash
+# Handle params like a pro
+# -ge greater than or equal to
+# $# is the number of params supplied to the script
+# wrap a param in ""'s if it contains spaces
+CMDLINEPARAM=1
+
+if [ $# -ge $CMDLINEPARAM ]
+then
+NAME=$1 # if more than one param take only the first one
+else
+NAME="John Doe" # If no params use this default
+fi
+
+RESPONDENT="The author of this fine script"
+
+cat << EndOfMessage
+Hello, there, $NAME.
+Greetings to you from $RESPONDENT.
+
+# This comment shows up in the heredoc message: why?
+
+EndOfMessage
+
+# Note that the blank lines show up in the message
+# As does the comment
+
+exit
+

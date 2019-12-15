@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Download Drupal 7 boilerplate from github and set up vanilla Drupal 7 site
 # https://github.com/docksal/boilerplate-drupal7
 # first argument is the name of the Drupal 7 docksal project

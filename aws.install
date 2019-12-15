@@ -1,0 +1,9 @@
+#!/bin/bash
+# Install the aws command line tool along with terraform
+# Check that python is up to date eg 2.7.10
+python --version
+# install awscli
+sudo pip install awscli
+# Has it installed correctly?
+aws --version
+# Next task is configure credentials for AWS

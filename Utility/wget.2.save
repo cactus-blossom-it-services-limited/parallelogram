@@ -1,0 +1,16 @@
+#!/bin/bash
+# Right click the tarball or zip
+# Choose 'copy link location'
+# Download the file to the working directory
+download_it () {
+wget $1
+}
+
+extract_it () {
+# get the file name
+filename=$(basename -- "$1")
+# test the file extension: is it .zip or .tar.gz
+file $filename | grep -q 'gzip compressed data' && tar xfz $filename
+file $filename | grep -q 'Zip archive data' && unzip $filename
+}
+

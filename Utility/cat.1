@@ -1,2 +1,10 @@
 #!/bin/bash
 # Basic illustration of the cat command
+# See if this works like a heredoc, echoing out the lines 
+# and the hyphen before EOF makes the first tabs are ignored
+cat <<-EOF
+	To be or not to be.
+	That is the question.
+	Whether 'tis nobler in the mind to suffer the slings
+	And arrows of outrageous fortune..
+	EOF

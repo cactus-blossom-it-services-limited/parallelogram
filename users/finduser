@@ -1,0 +1,5 @@
+# Create new file
+#! /bin/sh
+# that is the default path for shell scripts if say bash is not defined
+who | grep $1
+

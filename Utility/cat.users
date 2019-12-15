@@ -1,0 +1,5 @@
+#!/bin/bash
+# Get the number of users logged in
+who | wc -l
+# End the program
+exit

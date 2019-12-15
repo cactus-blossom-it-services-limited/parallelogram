@@ -1,0 +1,11 @@
+#!/bin/bash
+# echo the $PATH variable to see existing path
+# If you have downloaded an executable such as terraform .tar.gz
+# then uncompressed it, you can mv it to an existing path
+# instead of creating another path for it
+
+echo $PATH
+# then e.g.: su mv terraform /usr/local/bin
+# then test out terraform
+# terraform version
+

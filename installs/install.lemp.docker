@@ -1,0 +1,20 @@
+#!/bin/bash
+# https://medium.com/@naveed125/how-to-install-linux-nginx-mysql-php-lemp-stack-in-under-10-minutes-using-docker-1f23bf0a3ee9
+# Install a docker lemp stack using docker-compose
+
+# Test whether the github repo exists, which will return 0
+REPOURL="https://github.com/naveed125/docker-lemp-app.git"
+git ls-remote $REPOURL -q
+if [ $? -eq 0 ] # returns 0 if the github repo exists; -q suppresses outout (quiet mode)
+then
+# This installs to the current directory
+# So rename the cloned directory; also edit the docker-compose.yml file as required in dir root
+git clone https://github.com/naveed125/docker-lemp-app.git
+cd docker-lemp-app/
+fi
+
+# Now use docker-compose commands to start and stop the container:
+# After new installation: cd docker-lemp-app/
+# And this: docker-compose -p lemp up -d
+# Check if site is up: curl localhost
+# Bring the container down: docker-compose -p lemp down

@@ -8,6 +8,21 @@ ls /tmp/sample_file
 ls -l /tmp/sample_file
 # stat find and printf outputing like ls -l
 ls -l /tmp/sample_file
+# Show info about the linked file, rather than symbolic link itself
+ls -L /tmp/sample_file
+# Show type of file with one of several trailing type designators
+# / means file is dir; * file is executable; @ symbolic link
+# = is socket; | is FIFO buffer
+
+# Requires GNU extensions, quote names
+ls -Q /tmp/*
+# reverse the sort order
+ls -r /tmp/*
+# Recurse through subdirs
+ls -R /tmp
+# Sort by file size
+ls -RS /tmp
+
 stat -c'%A %h %U %G %s %y %n' /tmp/sample_file
 find /tmp/ -name sample_file -
 printf '%m %n %u %g %t %p'
