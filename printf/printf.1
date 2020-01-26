@@ -1,0 +1,40 @@
+#/bin/bash
+# Simple printf statement, no options supplied
+# note the difference to echo: no new line
+printf "hello printf
+
+# we use echo by default to print to standard output stream
+# Formatting an echo command can be tough and often impossible
+
+# printf is an old friend from C/C++
+# printf accepts a FORMAT string and arguments
+# in format can have format specifiers, escape sequences or 
+# ordinary characters
+
+# To print a new line need to supply printf with format string with
+# escape sequence \n (new line):
+printf "%s\n" "hello printf"
+
+# The format string is applied to each argument:
+printf "%s\n" "hello printf" "in" "bash script"
+
+# outputs:
+# hello printf
+# in
+# bash script
+
+# FORMAT SPECIFIERS
+#	As in the former examples have used %s as format specifier
+# Most common ones are %s, %b, %d, %x and %f
+# The specifiers are replaced by corresponding arguments:
+
+printf "%s\t%s\n" "1" "2 3" "4" "5
+# prints:
+# 1	   2 3
+# 4    5
+
+# We supplied two specifiers %s to print TAB and NEWLINE to be
+# used as a part of printf format string to print along with 
+# each argument. First \t is applied to argument "1" and \n to
+# argment "2 3". If more args than specifiers, the format string
+# is reused until all args have been depleted.

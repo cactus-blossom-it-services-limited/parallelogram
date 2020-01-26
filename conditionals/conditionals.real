@@ -1,0 +1,8 @@
+#!/bin/bash
+# Real programmers use the test builtin command
+# which is equivalent to using square brackets for comparison:
+
+# && takes an action if the test is true || if it proves false
+test "$($whoami)" != 'root' || (echo you are not using a non-privileged account; exit 1)
+&& (echo Great the test proved false;)
+# You can change the exit status to another integer e.g. 33

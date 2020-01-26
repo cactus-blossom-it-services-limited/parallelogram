@@ -1,0 +1,15 @@
+#!/bin/bash
+# http://tldp.org/LDP/abs/html/globbingref.html
+# Filenames with embedded whitespace can cause globbing to choke
+# David Wheeler shows how to avoid many such pitfalls
+IFS="$(printf '\n\t')" # Remove space
+
+# correct glob use:
+# always use for-loop, prefix glob, check if exists file.
+for file in ./* ; do		# Use ./* ... NEVER bare *
+	if [ -e "$file" ] ; then	# check whether file exists.
+		COMMAND ... "$file" ...
+	fi
+done
+
+# example is from David Wheeler's site

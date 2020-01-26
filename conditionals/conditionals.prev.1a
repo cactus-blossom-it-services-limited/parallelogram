@@ -1,0 +1,12 @@
+#!/bin/bash
+# Check previous command completed with 0 status
+# TEST-COMMANDS can be any UNIX ocmmand that returns an exit status
+grep peter /etc/passwd;
+# Store the status of the last command in a variable
+# You should do this because the $? global variable is overwritten on each command
+# This is the only way to record it for later use
+# Get the value of $? returned by greap peter /etc/passwd
+grep_retval=$?;
+echo The previous command had exit status: $?
+if [ $grep_retval -ne 0 ] ; then echo "The exit status was $grep_retval since the 'peter' user account is not managed locally"; fi
+echo The previous command exit status was: $?

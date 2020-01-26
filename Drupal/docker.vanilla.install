@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Install drupal 8 with composer and docker
+# Clone docker4drupal project
+# https://github.com/drupal-composer/drupal-project
+# https://github.com/wodby/docker4drupal
+# Prepare for build
+# Build our containers
+# Install drupal
+
+# Clone docker-composer drupal 8 latest
+composer create-project drupal-composer/drupal-project:8.x-dev $1  --no-interaction
+
+# Clone docker4drupal
+git clone https://github.com/wodby/docker4drupal $2
+
+rm -fr $2/.git
+
+rm $2/docker-compose.override.yml
+
+cp -R $2/ $1
+
+cd $1
+
+docker-compose up -d

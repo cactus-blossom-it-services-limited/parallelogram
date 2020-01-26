@@ -1,0 +1,6 @@
+#!/bin/bash
+# Test the output of the previous command
+ls
+if [ $? -eq 0 ]
+then echo 'The ls command completed okay!'
+fi
